@@ -11,8 +11,9 @@ A simple and fun Lottery Game built with React! Click the button to generate a r
 
 ## Demo
 
-![Lottery Game Screenshot](screenshot.png)  
-_(Add a screenshot of your app here)_
+![image](https://github.com/user-attachments/assets/4b95868b-e722-4944-818c-5a7166befd43)
+ 
+
 
 ## Installation
 
