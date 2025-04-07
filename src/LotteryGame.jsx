@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 import "./App.css";
+import { generateTicket, getResultMessage } from "./helper";
 
 const LotteryGame = () => {
   const [ticket, setTicket] = useState(null);
   const [result, setResult] = useState("");
 
-  const generateTicket = () => {
-    const digits = Array.from({ length: 3 }, () =>
-      Math.floor(Math.random() * 10)
-    );
-    const ticketNumber = digits.join("");
-    const sum = digits.reduce((a, b) => a + b, 0);
-
+  const handleGenerateTicket = () => {
+    const { ticketNumber, sum } = generateTicket();
     setTicket(ticketNumber);
-    setResult(sum === 15 ? "🎉 You won the Lottery!" : "❌ Try Again!");
+    setResult(getResultMessage(sum));
   };
 
   return (
@@ -24,7 +20,7 @@ const LotteryGame = () => {
         up to 15, you win!
       </p>
 
-      <button className="generate-btn" onClick={generateTicket}>
+      <button className="generate-btn" onClick={handleGenerateTicket}>
         Generate Ticket
       </button>
 
